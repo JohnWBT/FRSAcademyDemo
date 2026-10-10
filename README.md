@@ -1,36 +1,38 @@
-# Two Rivers Future Ready Skills Academy – review demo
+# Two Rivers Future Ready Skills Academy – public preview
 
-A standalone review demo of the Two Rivers Future Ready Skills Academy app, hosted by Southern River College.
-It uses **sample data only**: nothing is saved, no emails are sent, and reloading resets everything.
-Use **Try as** (top right) to switch between Teacher, School Leader, Industry Partner, Expert, Invited visitor and Admin.
+A public preview (minimum viable product) of the **Two Rivers Future Ready Skills Academy**, hosted by Southern River College, Western Australia.
+
+The Academy helps teachers bring emerging technology and the Future Ready Skills (Community, Communication, Collaboration, Critical Thinking and Creativity) into classrooms from Foundation to Year 12, and connects schools with industry partners and experts.
+
+**Try it:** open the site and use **Try as** (top right) to see the Academy as a Teacher, School Leader, Industry Partner, Expert, Invited visitor or Admin. **Then tell us what you think:** the **📝 Take the 6-minute survey** button opens a short Microsoft Forms survey.
+
+- **Sample data only.** Nothing you type is saved or sent anywhere, no emails are sent, and reloading resets everything. Names marked "(demo)" or "Sample:" are not real people or organisations.
+- The live Academy, with real accounts and data, runs separately. This repository holds no personal information, access rules or operational settings.
 
 ## What's in this repository
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The review demo (the whole app in one file) |
+| `index.html` | The preview (the whole app in one file), with the survey button |
 | `survey/index.html` | The student survey page for surveys on students' own devices (opens at `/survey`) |
 | `staff/` | The staff presentation: 17 slide pictures, the PDF and the PowerPoint |
 | `vercel.json` | Vercel settings: clean URLs, security headers, no search-engine indexing |
-| `robots.txt` | Asks search engines not to list the demo |
+| `robots.txt` | Asks search engines not to list the preview |
 
-It is a static site: there is no build step and no server code.
+It is a static site: there is no build step and no server code. These files are generated from the private portal repository (`npm run build:public`); make changes there, not here.
 
 ## Publish on Vercel
 
-1. **Create the repository.** On GitHub, choose **New repository** (for example `frs-academy-demo`; private is fine). Choose **uploading an existing file**, drag in everything from this folder, including the `staff` and `survey` folders, and press **Commit changes**.
-2. **Import it into Vercel.** In Vercel, choose **Add New… › Project**, connect GitHub if asked, and **Import** the repository.
-3. **Settings.** Framework Preset: **Other**. Leave Build Command and Output Directory empty (the root folder is the site). Press **Deploy**.
-4. **Open the link** Vercel gives you (for example `frs-academy-demo.vercel.app`). The student survey page is at `/survey`, and the demo's class codes and QR codes point there automatically.
+1. In Vercel, choose **Add New… › Project** and **Import** this repository.
+2. Framework Preset: **Other**. Leave Build Command and Output Directory empty. Press **Deploy**.
+3. To update, replace the files in this repository with a new `dist/public` from the portal repository and commit. Vercel redeploys within a minute.
 
-**Updating:** replace `index.html` (and `staff/` or `survey/index.html` if they changed) in GitHub. Vercel redeploys within a minute.
+Search engines are asked not to list the site (`noindex`), so it is shared by link or QR code. To let search engines find it, remove the `X-Robots-Tag` header from `vercel.json`, the robots meta tag from `index.html`, and `Disallow: /` from `robots.txt`.
 
-**Your own address (optional):** in Vercel, **Settings › Domains**, add for example `demo.frs.srczone.net`, then add the CNAME record Vercel shows to the srczone.net DNS.
+## Outside requests
 
-## Notes
+The preview loads Google Fonts, and when needed the PowerPoint library (cdn.jsdelivr.net), the spreadsheet library (cdnjs.cloudflare.com) and the QR scanner library. Resource links open the FRS materials on Google Drive and Canva, and the survey opens in Microsoft Forms.
 
-- The demo sends nothing anywhere. The only outside requests are Google Fonts, the PowerPoint library (cdn.jsdelivr.net, when a slide deck is downloaded), the spreadsheet library (cdnjs.cloudflare.com, for Excel downloads), the QR scanner library (when a camera scan is used) and links to the FRS resources on Google Drive and Canva.
-- Names marked "(demo)" or "Sample:" are not real people or organisations.
-- The live Academy, with real accounts and data, runs separately; this repository holds no personal information.
+## Copyright
 
-All contents, © Government of Western Australia 2026, unless otherwise stated ([education.wa.edu.au/copyright](https://www.education.wa.edu.au/copyright)). FRS resources © Department of Education WA 2024 (frs.srczone.net).
+All contents, © Government of Western Australia 2026, unless otherwise stated ([education.wa.edu.au/copyright](https://www.education.wa.edu.au/copyright)). FRS resources © Department of Education WA 2024 (frs.srczone.net). This repository is shared for review; it is not licensed for reuse.
