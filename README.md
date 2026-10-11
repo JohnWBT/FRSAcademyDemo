@@ -1,3 +1,5 @@
+<img src="brand/frs-academy-logo.svg" alt="Future Ready Skills Academy, Two Rivers Schools Network" width="440">
+
 # Two Rivers Future Ready Skills Academy – public preview
 
 A public preview (minimum viable product) of the **Two Rivers Future Ready Skills Academy**, hosted by Southern River College, Western Australia.
@@ -16,6 +18,8 @@ The Academy helps teachers bring emerging technology and the Future Ready Skills
 | `index.html` | The preview (the whole app in one file), with the survey button |
 | `survey/index.html` | The student survey page for surveys on students' own devices (opens at `/survey`) |
 | `staff/` | The staff presentation: 17 slide pictures, the PDF and the PowerPoint |
+| `brand/`, `favicon.ico` | The Academy logo files, browser and home-screen icons, and the image shown when the link is shared |
+| `video/` | The one-minute introduction video shown at the top of the welcome page, and its poster image |
 | `vercel.json` | Vercel settings: clean URLs, security headers, no search-engine indexing |
 | `robots.txt` | Asks search engines not to list the preview |
 
